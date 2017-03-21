@@ -1,12 +1,15 @@
-# Serverless Framework Kinesis Test
+# Serverless Framework Kinesis Private Subnet Test
 
 ## TODO
-* create VPC with private subnet and security group with cloudformation
-* create a kinesis stream before test
+* create VPC with private subnet and security group with cloudformation or cli
 * test whether from a private subnet the lambda function can put-record to Kinesis or use lambda
 
 ```
-$ aws kinesis put-record --stream-name stream_mytopic --partition-key test --data "hello world"
+$ aws kinesis create-stream --stream-name lambda_kinesis_test --shard-count 2
+```
+
+```
+$ aws kinesis put-record --stream-name lambda_kinesis_test --partition-key test --data "hello world"
 ```
 
 ```
