@@ -37,6 +37,10 @@ functions:
     events:
       - stream:
           type: kinesis
+          # arn: 
+          #   Fn::GetAtt:
+          #     - lambda_kinesis_test
+          #     - Arn
           arn: arn:aws:kinesis:ap-northeast-1:042083552617:stream/lambda_kinesis_test
     vpc:
       securityGroupIds:
